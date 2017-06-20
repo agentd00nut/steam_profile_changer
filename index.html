@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Steam Name Changer!</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="./index.js" ></script>
+    <script src="./view.js" ></script>
+  </head>
+  <body onresize="resize_to_window('left_region')">
+    <div class="main_area">
+
+      <div class="left_region">
+        <div class="controls">
+          <img src="imgs/refresh.png" onclick="populate_apps_list(true)">
+        </div>
+        <ul class="installed_apps">
+
+        </ul>
+      </div>
+      <div class="right_region">
+        <div class="right_header">
+          <b> Chose your avatars</b>
+        </div>
+        <div class="select_region">
+          <div class="avatars select">
+            
+          </div>
+          <div class="personas select">
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </body>
+</html>

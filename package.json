@@ -1,0 +1,9 @@
+{
+  "name": "name_change",
+  "version": "0.0.1",
+  "main": "main.js",
+  "dependencies": {
+    "steam-user": "^3.0.0"
+  },
+  "license": "GPL-3.0"
+}
