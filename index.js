@@ -3,22 +3,13 @@ var os=require('os');
 var fs=require('fs');
 const username = require('username');
 
-/* Edit these lines to be your steam login */
-/* Example:
-    accountName="myAccount"
-    password="superSecret"
-*/
 
-
-
-accountName=""
-password=""
-
+var creds = fs.readFileSync("data/credentials.txt","utf8").split("\n");
+accountName=creds[0];
+password=creds[1];
 
 var app = require('electron').remote; 
 var dialog = app.dialog;
-
-
 
 
 SteamUser.prototype.setAvatar = function(file_path){
@@ -85,6 +76,7 @@ if(  client.publicIP == undefined ){
     	"accountName": accountName,
     	"password": password
     });
+
 }
 
 client.on('loggedOn', function(details) {

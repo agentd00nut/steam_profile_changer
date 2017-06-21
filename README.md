@@ -9,14 +9,16 @@ Currently only works if you have steam in its default path.
 
 ## How To Use
 Right now you'll need electron (thus node).  Then follow these steps.
-1. Edit index.js lines 14 and 15 to be your steam account name and password.
-2. Install node + npm... https://nodejs.org/en/download/package-manager/ or https://nodejs.org/en/download/ if thats easier for you.
-3. `npm install`
-4. electron main.js
-5. Don't let anyone get your index.js since it obviously has your steam account name and password... we'll find a better way to store those later.
-6. On the first launch it will detect the app as a "new computer" and your steam email address will receive one of the verification emails, enter that code... You won't have to do this again.
+
+1. Install node + npm... https://nodejs.org/en/download/package-manager/ or https://nodejs.org/en/download/ if thats easier for you.
+2. `npm install`
+3. Create `data/credentials.txt`. Username on the first line, password on the second...
+4. Run `electron main.js`
+5. On the first launch steam will detect the app as a "new computer" and your steam email address will receive one of the verification emails, enter that code... You won't have to do this again.
 7. The program should auto detect what apps you have installed and display them on the left, the first app is always "default".
-8. Click on an app, then add avatars and personas as you see fit for each app.  Default is the pool the program picks from when returning from a game.
+8. Click on an app, then add avatars and personas as you see fit for each app.  
+
+Default is the pool the program picks from when returning from a game.  This pool will be used when to "reset" your profile when you leave games.
 
 You need to leave this running while you play games on steam so it can detect when you start and stop playing games.
 Also you'll need to manually setup the default app with what you want your profile to be when you come out of games.
