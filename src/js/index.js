@@ -4,6 +4,7 @@ var fs=require('fs');
 const username = require('username');
 
 
+
 var loc = window.location.pathname;
 var local_dir = loc.substring(0, loc.lastIndexOf('/'));
 
@@ -11,14 +12,33 @@ var creds = fs.readFileSync(local_dir+"/../app/data/credentials.txt","utf8").spl
 accountName=creds[0].trim();
 password=creds[1].trim();
 
-console.log(accountName)
-console.log(password)
 
 var app = require('electron').remote; 
+const nativeImage = require('electron').nativeImage
 var dialog = app.dialog;
 
 
 SteamUser.prototype.setAvatar = function(file_path){
+
+    //let nativeImage.createFromPath(file_path);
+    stats = fs.statSync(file_path);
+    console.log(file_path, stats.size);
+    
+    if ( stats.size > 1000000 ){
+        
+        let image = nativeImage.createFromPath(file_path)
+        image = image.resize({width:200,height:200});
+        
+        fs.writeFile(local_dir+"/../app/data/temp_imgs/tmp", image.toPNG(), (err) => {
+            if(err) throw err;
+        });
+
+        
+        console.log("Resized avatar!");
+        file_path=local_dir+"/../app/data/temp_imgs/tmp";
+
+
+    }
 
 	var options = { method: 'POST',
 	  url: 'http://steamcommunity.com/actions/FileUploader',
@@ -50,8 +70,10 @@ SteamUser.prototype.setAvatar = function(file_path){
 	         { filename: file_path,
 	           contentType: "image/jpeg" } } } };
 
-	request(options, function (error, response, body) {
-	if (error) throw new Error(error);
+	
+    request(options, function (error, response, body) {
+	
+    if (error) throw new Error(error);
 
 		console.log("Avatar Set to: ", file_path);
 
@@ -86,7 +108,7 @@ if(  client.publicIP == undefined ){
 
 client.on('loggedOn', function(details) {
 	console.log("Logged into Steam as " + client.steamID.getSteamID64());
-	client.setPersona( SteamUser.EPersonaState.Online );
+	//client.setPersona( SteamUser.EPersonaState.Online );
 
 });
 

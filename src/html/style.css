@@ -134,10 +134,18 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#343434', end
     flex-wrap:wrap;
 
 }
+.avatar_container{
+    padding:5px;
+}
 .avatar{
     flex:1;
     height:100px;
     width:100px;
+        background-color: #2a3f5a;
+    border: 1px solid #000;
+    border-radius: 3px;
+    box-shadow: 1px 1px 0 #45556c;
+    padding:5px;
 }
 
 .personas{

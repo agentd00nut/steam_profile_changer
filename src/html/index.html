@@ -8,11 +8,13 @@
     <script src="../js/view.js" ></script>
   </head>
   <body onresize="resize_to_window('left_region')">
+    
     <div class="main_area">
 
       <div class="left_region">
         <div class="controls">
           <img src="imgs/refresh.png" onclick="populate_apps_list(true)">
+          <img src="imgs/manual_update.png" onclick="set_profile(selected_app)">
         </div>
         <ul class="installed_apps">
 
