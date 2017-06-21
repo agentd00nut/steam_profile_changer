@@ -4,7 +4,10 @@ var fs=require('fs');
 const username = require('username');
 
 
-var creds = fs.readFileSync("data/credentials.txt","utf8").split("\n");
+var loc = window.location.pathname;
+var local_dir = loc.substring(0, loc.lastIndexOf('/'));
+
+var creds = fs.readFileSync(local_dir+"/../app/data/credentials.txt","utf8").split("\n");
 accountName=creds[0].trim();
 password=creds[1].trim();
 
@@ -166,7 +169,7 @@ function populate_apps_list(force=false){
 
     console.log("populating app list.");
 
-    fs.access('data/cached_installed_apps', fs.F_OK, (err) => {
+    fs.access(local_dir+'/../app/data/cached_installed_apps', fs.F_OK, (err) => {
 
         if(err || force == true){
 
@@ -559,7 +562,7 @@ function get_file_path(cb){
 
 function write_array_to_file(array, file, cb){
 
-    fs.writeFile("data/"+file, JSON.stringify(array), (err) => {
+    fs.writeFile(local_dir+"/../app/data/"+file, JSON.stringify(array), (err) => {
         if(err){ console.log(err); }
         else{ 
             console.log(" Saved to "+file);
@@ -574,7 +577,7 @@ function write_array_to_file(array, file, cb){
 function read_array_from_file(file,  cb){
 
     var container = {};
-    fs.readFile("data/"+file, (err, data) => {
+    fs.readFile(local_dir+"/../app/data/"+file, (err, data) => {
         if(err) throw err;
 
         if( data != "" ){
