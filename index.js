@@ -5,8 +5,11 @@ const username = require('username');
 
 
 var creds = fs.readFileSync("data/credentials.txt","utf8").split("\n");
-accountName=creds[0];
-password=creds[1];
+accountName=creds[0].trim();
+password=creds[1].trim();
+
+console.log(accountName)
+console.log(password)
 
 var app = require('electron').remote; 
 var dialog = app.dialog;
@@ -71,7 +74,6 @@ profiles = read_array_from_file('profile_cache', (data)=>{ profiles=data } );
 
 
 if(  client.publicIP == undefined ){
-
     client.logOn({
     	"accountName": accountName,
     	"password": password
@@ -199,7 +201,7 @@ function find_installed_apps(callback)
         path="/Users/"+username.sync()+"/Library/Application Support/Steam/steamapps/"    
     }
     else if ( os.platform() == "win32"){
-        path="C:/Program Files (x86)/Steam/"
+        path="C:/Program Files (x86)/Steam/steamapps/"
     }
 
     console.log("Finding owned apps, looking at "+path);
@@ -575,7 +577,9 @@ function read_array_from_file(file,  cb){
     fs.readFile("data/"+file, (err, data) => {
         if(err) throw err;
 
-        container=JSON.parse(data);
+        if( data != "" ){
+            container=JSON.parse(data);
+        }
 
         if(cb){
             cb(container);

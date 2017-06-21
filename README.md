@@ -13,7 +13,7 @@ Right now you'll need electron (thus node).  Then follow these steps.
 1. Install node + npm... https://nodejs.org/en/download/package-manager/ or https://nodejs.org/en/download/ if thats easier for you.
 2. `npm install`
 3. Create `data/credentials.txt`. Username on the first line, password on the second...
-4. Run `electron main.js`
+4. Run `electron main.js`  If that doesn't work run `npm install -g electron`.
 5. On the first launch steam will detect the app as a "new computer" and your steam email address will receive one of the verification emails, enter that code... You won't have to do this again.
 7. The program should auto detect what apps you have installed and display them on the left, the first app is always "default".
 8. Click on an app, then add avatars and personas as you see fit for each app.  
