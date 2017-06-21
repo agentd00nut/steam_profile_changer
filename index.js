@@ -194,8 +194,12 @@ function populate_apps_list(force=false){
 function find_installed_apps(callback)
 {
 
+
     if  ( os.platform() == "darwin" ){
         path="/Users/"+username.sync()+"/Library/Application Support/Steam/steamapps/"    
+    }
+    else if ( os.platform() == "win32"){
+        path="C:/Program Files (x86)/Steam/"
     }
 
     console.log("Finding owned apps, looking at "+path);
