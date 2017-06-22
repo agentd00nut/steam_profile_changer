@@ -6,8 +6,8 @@ const username = require('username');
 
 
 var loc = window.location.pathname;
-var local_dir = loc.substring(0, loc.lastIndexOf('/'));
-
+//var local_dir = loc.substring(0, loc.lastIndexOf('/'));
+var local_dir = loc.substring(0, loc.lastIndexOf('/')).substring( loc.lastIndexOf(":")+1 ) ;
 
 
 
@@ -93,8 +93,11 @@ client.apps_installed=[];
 
 
 var profiles={};
-profiles = read_array_from_file('profile_cache', (data)=>{ profiles=data } );
-
+read_array_from_file('profile_cache', (data)=>{ 
+    if( data != "" ){
+        profiles=data 
+        console.log(profiles);
+    }} );
 
 if(  client.publicIP == undefined ){
 
@@ -527,6 +530,11 @@ function save_persona(){
     }
 
     console.log("Trying to save", this.value, this.value.length);
+
+    if( profiles[app_id] == null)
+    {
+        profiles[app_id] = [[],[]]
+    }
 
     if( profiles[app_id][0].indexOf( this.value ) === -1  ){
         profiles[app_id][0].push(this.value);

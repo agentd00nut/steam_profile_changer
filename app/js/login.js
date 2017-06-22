@@ -1,6 +1,8 @@
 var fs=require('fs');
 var loc = window.location.pathname;
-var local_dir = loc.substring(0, loc.lastIndexOf('/'));
+//var local_dir = loc.substring(0, loc.lastIndexOf('/'));
+var local_dir = loc.substring(0, loc.lastIndexOf('/')).substring( loc.lastIndexOf(":")+1 ) ;
+
 
 function set_cookie(){
 

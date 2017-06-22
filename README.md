@@ -6,15 +6,22 @@ Manually change your profile with a single click.
 
 Currently in pre-alpha.
 
-## How To Use
+## Where to Get
+
+Pick your platform, download, extract, open the electron program.
+
+[OSx](https://my.cloudme.com/agentd00nut/steam_profile_changer-darwin-x64)
+[Windows 32](https://my.cloudme.com/agentd00nut/steam_profile_changer-win32-ia32)
+[Windows 64](https://my.cloudme.com/agentd00nut/steam_profile_changer-win32-x64)
+
+## How To Build
 
 Right now you need node and electron, you won't need those soon.
 
 1. Install node + npm... [CLI method](https://nodejs.org/en/download/package-manager/) or [Easier Method](https://nodejs.org/en/download/).
 2. Run these commands.`git clone https://github.com/agentd00nut/steam_profile_changer.git` `cd steam_profile_changer/src/app/` `npm install`
-3. Edit or create `data/credentials.txt`. Write your steam username on the first line and your steam password on the second. 
-4. Run `electron main.js`.  If that doesn't work run `npm install -g electron` and try again.
-5. On the first launch steam might detect the app as a "new computer" and your steam email address will receive one of the verification emails, enter that code at the prompt. You won't have to do this again.
+3. Run `electron main.js`.  If that doesn't work run `npm install -g electron` and try again.
+4. On the first launch steam might detect the app as a "new computer" and your steam email address will receive one of the verification emails, enter that code at the prompt. You won't have to do this again.
 
 Default is the pool the program picks from when returning from a game.  This pool will be used to "reset" your profile when you leave games.
 
@@ -28,12 +35,11 @@ If you want to manually update your profile select the app you want to use as yo
 You can omit either avatars or personas from an app pool.  You'll keep whatever you have and only update what you have selected for that app.
 
 ## Contribute
+Here are some things that would be helpful.
 
 Clean up the gui and making it work well at large and small window sizes.
 
 Using steam sentry files located in the steam directory if they are present would simplify the login experience on first launch.
-
-Suggestions on how to do #4 of coming features, even if its just a game you want to see custom features for and what those features would be.
 
 Trying it out!
 
@@ -59,4 +65,4 @@ Trying it out!
 3. ???
 
 ## Contact
-Twitter: @abrothers656
+Twitter: [@abrothers656](https://twitter.com/abrothers656)
