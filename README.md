@@ -69,7 +69,9 @@ Trying it out!
 ## Bugs
 1. Window doesn't properly scroll if there are too many avatars or personas.
 2. Editing the text box of a persona simply adds the new text as a new persona instead of removing the old one first.
-3. ???
+3. On windows platforms if the path to files is too long it seems to "not find" the file.
+4. ???
+
 
 ## Contact
 Twitter: [@abrothers656](https://twitter.com/abrothers656)
