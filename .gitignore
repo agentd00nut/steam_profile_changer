@@ -1,0 +1,5 @@
+compile.sh
+app/node_modules
+app/package-lock.json
+data/credentials*
+bin

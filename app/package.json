@@ -4,6 +4,7 @@
   "main": "main.js",
   "dependencies": {
     "electron": "^1.6",
+    "passport-steam": "^1.0.8",
     "steam-user": "^3.0.0",
     "username": "^3.0"
   },
