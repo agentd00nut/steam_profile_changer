@@ -37,6 +37,10 @@ If you want to manually update your profile select the app you want to use as yo
 
 You can omit either avatars or personas from an app pool.  You'll keep whatever you have and only update what you have selected for that app.
 
+## Issues
+
+If you have issues either tweet me or use the issue reporter for this repo.  
+
 ## Contribute
 Here are some things that would be helpful.
 
