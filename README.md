@@ -4,17 +4,17 @@ Easily manage you steam avatar and persona on a by game basis!
 
 Manually change your profile with a single click.
 
-Currently in pre-alpha.
+Currently in alpha.
 
 ## Where to Get
 
 Pick your platform, download, extract, open the electron program.
 
-[OSx](https://my.cloudme.com/agentd00nut/steam_profile_changer-darwin-x64)
-[Windows 32](https://my.cloudme.com/agentd00nut/steam_profile_changer-win32-ia32)
-[Windows 64](https://my.cloudme.com/agentd00nut/steam_profile_changer-win32-x64)
+[OSx](https://my.cloudme.com/agentd00nut/steam_profile_changer-darwin-x64.tar)
+[Windows 32](https://my.cloudme.com/agentd00nut/steam_profile_changer-win32-ia32.tar)
+[Windows 64](https://my.cloudme.com/agentd00nut/steam_profile_changer-win32-x64.tar)
 
-## How To Build
+## How to Build
 
 Right now you need node and electron, you won't need those soon.
 
@@ -22,6 +22,9 @@ Right now you need node and electron, you won't need those soon.
 2. Run these commands.`git clone https://github.com/agentd00nut/steam_profile_changer.git` `cd steam_profile_changer/src/app/` `npm install`
 3. Run `electron main.js`.  If that doesn't work run `npm install -g electron` and try again.
 4. On the first launch steam might detect the app as a "new computer" and your steam email address will receive one of the verification emails, enter that code at the prompt. You won't have to do this again.
+
+
+## How to use
 
 Default is the pool the program picks from when returning from a game.  This pool will be used to "reset" your profile when you leave games.
 
