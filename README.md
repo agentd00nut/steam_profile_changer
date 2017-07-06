@@ -38,9 +38,7 @@ Deleting the text of a persona box and inserting new text doesn't work as intend
 
 Pick your platform, download, extract, open the electron program.
 
-[OSx](https://my.cloudme.com/#agentd00nut/steam_profile_changer-darwin-x64.tar)
-[Windows 32](https://my.cloudme.com/#agentd00nut/steam_profile_changer-win32-ia32.tar)
-[Windows 64](https://my.cloudme.com/#agentd00nut/steam_profile_changer-win32-x64.tar)
+[Downloads](https://my.cloudme.com/#agentd00nut/steam_profile_changer_binaries)
 
 ## Instructions to build from source
 
