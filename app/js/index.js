@@ -83,6 +83,8 @@ var client = new SteamUser();
 var fs = require("fs");
 var request = require("request");
 
+client.setOption("promptSteamGuardCode", false);
+
 var web_id;
 var web_cookies;
 var default_avatars_element;
@@ -97,14 +99,16 @@ read_array_from_file('profile_cache', (data)=>{
     if( data != "" ){
         profiles=data 
         console.log(profiles);
-    }} );
+    }} 
+);
+
+
 
 if(  client.publicIP == undefined ){
 
     var creds = fs.readFileSync(local_dir+"/../data/credentials.txt","utf8").split(";");
     accountName=creds[0].trim();
     password=creds[1].trim();
-    fs.unlinkSync(local_dir+"/../data/credentials.txt");
 
     client.logOn({
     	"accountName": accountName,
@@ -115,14 +119,39 @@ if(  client.publicIP == undefined ){
 
 client.on('loggedOn', function(details) {
 	console.log("Logged into Steam as " + client.steamID.getSteamID64());
-	//client.setPersona( SteamUser.EPersonaState.Online );
+	client.setPersona( SteamUser.EPersonaState.Online );
+    //window.location="steamcode.html";
+    fs.unlinkSync(local_dir+"/../data/credentials.txt");
+
 
 });
 
 client.on('error', function(e) {
-	console.log(e);
+    console.log(e);
+	window.location="login.html";
 });
 
+function print_shit(text){
+    console.log(text);
+}
+
+
+client.on('steamGuard', function(domain, callback) {
+    console.log("Steam Guard code needed from email ending in " + domain);
+
+    if (fs.existsSync(local_dir+"/../data/steamcode.txt")) {
+        code=fs.readFileSync(local_dir+"/../data/steamcode.txt","utf8")
+        code=code.trim();
+        fs.unlinkSync(local_dir+"/../data/steamcode.txt");
+        console.log("Submitting code ",code," From disk.")
+        callback(code);
+    }else{
+
+        window.location="steamcode.html"
+    }
+    //var code = getCodeSomehow();
+    //callback(code);
+});
 
 
 

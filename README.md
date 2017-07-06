@@ -2,11 +2,39 @@
 
 Easily manage you steam avatar and persona on a by game basis!
 
-Manually change your profile with a single click.
+Manually change your profile with a single click!
 
-Currently in alpha.
+## How to use
 
-## Where to Get
+
+You need to leave this running while you play games on steam so it can detect when you start and stop playing games.
+
+Program controls are on the top left section.  
+The first button forces the app to redetect your installed programs.  Great for when you've installed new games.
+The second button uses the currently selected apps avatars and personas to manually update your profile.
+
+A list of your currently installed apps is shown on the left.  The "Default" app is where you specify what personas
+and avatars you want to use when leaving games.
+
+Click an app in the list and specify avatars or personas you want the program to randomly pick from when you start that app.
+
+You can always use the manual program control in the top left to force the program to re pick an avatar and persona from the currently selected app.
+
+You may omit specifying avatars or personas.  The program will simply not update whichever setting you omit.
+
+
+Don't send too many manual submissions in a short time.  Steam will stop letting you switch your avatar and persona for a short while.  This will not effect your ability to play games or use other steam features.
+
+
+## Known bugs or workarounds
+
+If you tried this previously and it "didn't work" and you gave up, try again!  It wasn't properly handling the first time run case on some platforms.  The program should have asked you to enter the steam code to verify a new computer but it didn't so you likely just gave up.
+
+If your steam friends list says no one is online, use the steam friend list to set yourself to "offline" and then immediately "log in" through the steam friend list.
+
+Deleting the text of a persona box and inserting new text doesn't work as intended.  Instead you need to delete the persona box you don't want anymore and add a new blank one and write the name you want in there.  If you overwrite a persona and get unexpected results, click off the current app and click back onto it and you'll see the old personas, simply delete them.
+
+## Download Links
 
 Pick your platform, download, extract, open the electron program.
 
@@ -14,7 +42,7 @@ Pick your platform, download, extract, open the electron program.
 [Windows 32](https://my.cloudme.com/#agentd00nut/steam_profile_changer-win32-ia32.tar)
 [Windows 64](https://my.cloudme.com/#agentd00nut/steam_profile_changer-win32-x64.tar)
 
-## How to Build
+## Instructions to build from source
 
 Right now you need node and electron, you won't need those soon.
 
@@ -24,29 +52,10 @@ Right now you need node and electron, you won't need those soon.
 4. On the first launch steam might detect the app as a "new computer" and your steam email address will receive one of the verification emails, enter that code at the prompt. You won't have to do this again.
 
 
-## How to use
-
-Default is the pool the program picks from when returning from a game.  This pool will be used to "reset" your profile when you leave games.
-
-You need to leave this running while you play games on steam so it can detect when you start and stop playing games.
-Also you'll need to manually setup the default app with what you want your profile to be when you come out of games.
-
-If you install new apps then the program needs you to click the refresh symbol at the top left to tell it to go check for new apps!
-
-If you want to manually update your profile select the app you want to use as your pool and click the second option at the top left, the upload icon.
-
-You can omit either avatars or personas from an app pool.  You'll keep whatever you have and only update what you have selected for that app.
-
-## Issues
-
-If you have issues either tweet me or use the issue reporter for this repo.  
-
 ## Contribute
 Here are some things that would be helpful.
 
 Clean up the gui and making it work well at large and small window sizes.
-
-Using steam sentry files located in the steam directory if they are present would simplify the login experience on first launch.
 
 Trying it out!
 
@@ -69,9 +78,7 @@ Trying it out!
 ## Bugs
 1. Window doesn't properly scroll if there are too many avatars or personas.
 2. Editing the text box of a persona simply adds the new text as a new persona instead of removing the old one first.
-3. On windows platforms if the path to files is too long it seems to "not find" the file.
-4. ???
-
+3. ???
 
 ## Contact
 Twitter: [@abrothers656](https://twitter.com/abrothers656)
